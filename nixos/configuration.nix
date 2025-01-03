@@ -19,17 +19,21 @@
       efi.canTouchEfiVariables = true;
     };
     kernelParams = [
-      # Potential fix for screen flickering on Wayland
+      # Fix for screen flickering on Wayland
       "amdgpu.dcdebugmask=0x10"
       # Silent boot
       "quiet"
       "splash"
       "vga=current"
-      "loglevel=3"
+      "rd.systemd.show_status=false"
       "rd.udev.log_level=3"
       "udev.log_priority=3"
-      "rd.systemd.show_status=false"
+      "loglevel=3"
     ];
+
+    plymouth.enable = true;
+    consoleLogLevel = 0;
+    initrd.verbose = false;
   };
 
   networking.hostName = "Laptop-Nix-SB"; # Define your hostname.
