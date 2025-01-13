@@ -97,8 +97,6 @@
     };
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     home-manager
 
@@ -106,6 +104,7 @@
     firefox
 
     gcc
+    clang-tools
 
     kitty
     fzf
@@ -133,10 +132,6 @@
     kanata
   ];
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
   programs.hyprland.enable = true;
   programs.thunar.enable = true;
 
@@ -159,11 +154,6 @@
     '';
   };
 
-  # Font
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-  ];
-
   # Audio
   security.rtkit.enable = true;
   services.pipewire = {
@@ -179,5 +169,5 @@
   hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
