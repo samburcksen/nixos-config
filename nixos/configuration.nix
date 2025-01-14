@@ -1,50 +1,16 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ 
+    ./hardware-configuration.nix
+    ./boot.nix
+    ./networking.nix
+    ./locale.nix
+    ./users.nix
+  ];
 
+  # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  # Bootloader
-  boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
-    kernelParams = [
-      # Fix for screen flickering on Wayland
-      "amdgpu.dcdebugmask=0x10"
-      # Silent boot
-      "quiet"
-      "splash"
-      "vga=current"
-      "rd.systemd.show_status=false"
-      "rd.udev.log_level=3"
-      "udev.log_priority=3"
-      "loglevel=3"
-    ];
-
-    plymouth.enable = true;
-    consoleLogLevel = 0;
-    initrd.verbose = false;
-  };
-
-  networking.hostName = "Laptop-Nix-SB"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -81,14 +47,6 @@
     HandleLidSwitch=ignore
   '';
 
-  users.groups.uinput = {};
-  users.users.sburcksen = {
-    isNormalUser = true;
-    description = "Sam Burcksen";
-    extraGroups = [ "networkmanager" "wheel" "input" "uinput" ];
-    packages = with pkgs; [];
-  };
-
   # Allow unfree packages and add unstable branch
   nixpkgs.config = {
     allowUnfree = true;
@@ -100,11 +58,9 @@
   environment.systemPackages = with pkgs; [
     home-manager
 
-    git
     firefox
 
     gcc
-    clang-tools
 
     kitty
     fzf
