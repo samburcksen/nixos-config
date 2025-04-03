@@ -12,24 +12,6 @@
   # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Set your time zone.
-  time.timeZone = "Europe/Berlin";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "de_DE.UTF-8";
-    LC_IDENTIFICATION = "de_DE.UTF-8";
-    LC_MEASUREMENT = "de_DE.UTF-8";
-    LC_MONETARY = "de_DE.UTF-8";
-    LC_NAME = "de_DE.UTF-8";
-    LC_NUMERIC = "de_DE.UTF-8";
-    LC_PAPER = "de_DE.UTF-8";
-    LC_TELEPHONE = "de_DE.UTF-8";
-    LC_TIME = "de_DE.UTF-8";
-  };
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -58,8 +40,6 @@
   environment.systemPackages = with pkgs; [
     home-manager
 
-    firefox
-
     gcc
 
     kitty
@@ -68,6 +48,7 @@
     wget
     unzip
     xsel
+    jq
 
     waybar
     hyprpaper
@@ -83,6 +64,7 @@
         font = "JetBrainsMono";
         fontSize = "16";
     })
+    iwgtk
 
     brightnessctl
     kanata
@@ -97,7 +79,7 @@
     theme = "catppuccin-mocha";
     package = pkgs.kdePackages.sddm;
   };
-  
+
   # Fish
   programs.fish.enable = true;
   programs.bash = {
