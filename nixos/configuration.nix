@@ -5,8 +5,11 @@
     ./hardware-configuration.nix
     ./boot.nix
     ./networking.nix
+    ./audio.nix
+    ./bluetooth.nix
     ./locale.nix
     ./users.nix
+    ./nvidia.nix
   ];
 
   # Enable Nix Flakes
@@ -41,6 +44,8 @@
     home-manager
 
     gcc
+    cargo
+    rustup
 
     kitty
     fzf
@@ -65,9 +70,10 @@
         fontSize = "16";
     })
     iwgtk
+    nwg-displays
 
     brightnessctl
-    kanata
+#    kanata
   ];
 
   programs.hyprland.enable = true;
@@ -92,20 +98,6 @@
     '';
   };
 
-  # Audio
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    jack.enable = true;
-  };
-
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   system.stateVersion = "24.11";
 }

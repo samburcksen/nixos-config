@@ -1,7 +1,7 @@
 { ... }:
 
 {
-  networking.hostName = "Laptop-Nix-SB"; # Define your hostname.
+  networking.hostName = "Desktop-Nix-SB";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
