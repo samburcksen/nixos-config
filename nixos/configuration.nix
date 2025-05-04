@@ -10,6 +10,7 @@
     ./locale.nix
     ./users.nix
     ./nvidia.nix
+    ./hyprland.nix
   ];
 
   # Enable Nix Flakes
@@ -47,37 +48,19 @@
     cargo
     rustup
 
-    kitty
     fzf
     stow
     wget
     unzip
-    xsel
-    jq
 
-    waybar
-    hyprpaper
-    hypridle
-    hyprlock
-    wlogout
-    pavucontrol
-    cliphist
-    wofi
-    mako
     (catppuccin-sddm.override {
         flavor = "mocha";
         font = "JetBrainsMono";
         fontSize = "16";
     })
-    iwgtk
-    nwg-displays
 
-    brightnessctl
 #    kanata
   ];
-
-  programs.hyprland.enable = true;
-  programs.thunar.enable = true;
 
   services.displayManager.sddm = {
     enable = true;
