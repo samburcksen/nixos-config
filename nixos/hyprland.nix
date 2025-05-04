@@ -6,6 +6,7 @@
     hyprpaper
     hypridle
     hyprlock
+    hyprshot
     wlogout
     pavucontrol
     cliphist
