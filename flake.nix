@@ -7,37 +7,30 @@
 
   outputs = { self, nixpkgs }:
   let
-    system = "x86_64-linux";
-    pkgs = system: import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
+    specialArgs = {
+      modules = import ./modules nixpkgs.lib;
     };
-
   in {
     nixosConfigurations = {
-      sburcksen = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system; };
-
-        modules = [ ./nixos/configuration.nix ];
-      };
-
       desktop = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        inherit specialArgs;
         modules = [
-          ./hosts/desktop.nix
+          ./hosts/desktop
           ./modules/base.nix
         ];
       };
 
       laptop = nixpkgs.lib.nixosSystem {
         modules = [
-          ./hosts/laptop.nix
+          ./hosts/laptop
           ./modules/base.nix
         ];
       };
 
       nas = nixpkgs.lib.nixosSystem {
         modules = [
-          ./hosts/nas.nix
+          ./hosts/nas
           ./modules/base.nix
         ];
       };
