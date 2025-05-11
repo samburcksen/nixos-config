@@ -1,31 +1,22 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ 
-    ./hardware-configuration.nix
-    ./boot.nix
-    ./networking.nix
-    ./audio.nix
-    ./bluetooth.nix
-    ./locale.nix
-    ./users.nix
-    ./nvidia.nix
-    ./hyprland.nix
-  ];
-
   # Enable Nix Flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  # uinput required for kanata
+  users.groups.uinput = {};
+  users.users.sburcksen = {
+    isNormalUser = true;
+    description = "Sam Burcksen";
+    extraGroups = [ "wheel" "input" "uinput" ];
+  };
 
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
     variant = "";
   };
-
-  # Required by Kanata
-  services.udev.extraRules = ''
-    KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
-  '';
 
   # Overwrite default logind behaviour
   services.logind.extraConfig = ''
@@ -42,8 +33,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    home-manager
-
     gcc
     cargo
     rustup
@@ -53,21 +42,7 @@
     wget
     unzip
 
-    (catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "JetBrainsMono";
-        fontSize = "16";
-    })
-
-#    kanata
   ];
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
-  };
 
   # Fish
   programs.fish.enable = true;
@@ -81,6 +56,19 @@
     '';
   };
 
-
+  time.timeZone = "Europe/Berlin";
+  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "de_DE.UTF-8";
+    LC_IDENTIFICATION = "de_DE.UTF-8";
+    LC_MEASUREMENT = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+    LC_NAME = "de_DE.UTF-8";
+    LC_NUMERIC = "de_DE.UTF-8";
+    LC_PAPER = "de_DE.UTF-8";
+    LC_TELEPHONE = "de_DE.UTF-8";
+    LC_TIME = "de_DE.UTF-8";
+  };
+  
   system.stateVersion = "24.11";
 }
