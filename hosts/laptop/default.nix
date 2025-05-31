@@ -4,13 +4,16 @@
   networking.hostName = "Laptop-Nix-SB";
   
   imports = with modules; [
-    ./desktop-hardware.nix
-    bluetooth.nix
-    boot.nix
-    audio.nix
-    nvidia.nix
-    hyprland.nix
-    wifi.nix
+    ./hardware.nix
+    bluetooth
+    boot
+    audio
+    locale
+    user
+    shell
+    hyprland
+    wifi
+    kanata
   ];
 
   # Overwrite default logind behaviour

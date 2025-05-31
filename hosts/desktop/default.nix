@@ -4,11 +4,14 @@
   networking.hostName = "Desktop-Nix-SB";
   
   imports = with modules; [
-    ./desktop-hardware.nix
+    ./hardware.nix
     bluetooth
     boot
+    locale
+    user
     audio
     nvidia
+    shell
     hyprland
     wifi
   ];
