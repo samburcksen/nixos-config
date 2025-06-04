@@ -2,7 +2,10 @@
 
 {
   # Enable Nix Flakes
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -14,7 +17,9 @@
   nixpkgs.config = {
     allowUnfree = true;
     packageOverrides = pkgs: {
-      unstable = import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz") {};
+      unstable =
+        import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz")
+          { };
     };
   };
 
@@ -30,6 +35,5 @@
 
   ];
 
-  
   system.stateVersion = "24.11";
 }

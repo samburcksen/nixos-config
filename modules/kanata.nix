@@ -5,7 +5,7 @@
     KERNEL=="uinput", MODE="0660", GROUP="uinput", OPTIONS+="static_node=uinput"
   '';
 
-  users.groups.uinput = {};
+  users.groups.uinput = { };
 
   environment.systemPackages = [
     pkgs.kanata

@@ -2,7 +2,7 @@
 
 {
   networking.hostName = "Desktop-Nix-SB";
-  
+
   imports = with modules; [
     ./hardware.nix
     bluetooth

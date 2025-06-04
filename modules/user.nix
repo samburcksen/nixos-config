@@ -4,6 +4,10 @@
   users.users.sburcksen = {
     isNormalUser = true;
     description = "Sam Burcksen";
-    extraGroups = [ "wheel" "input" "uinput" ];
+    extraGroups = [
+      "wheel"
+      "input"
+      "uinput"
+    ];
   };
 }

@@ -18,9 +18,9 @@
     feh # Image Viewer
     jq # JSON parser required for custom workspace switch behavior
     (catppuccin-sddm.override {
-        flavor = "mocha";
-        font = "JetBrainsMono";
-        fontSize = "16";
+      flavor = "mocha";
+      font = "JetBrainsMono";
+      fontSize = "16";
     })
   ];
 
@@ -29,7 +29,7 @@
 
   # Login manager
   services.displayManager.sddm = {
-    enable = true; 
+    enable = true;
     wayland.enable = true;
     theme = "catppuccin-mocha";
     package = pkgs.kdePackages.sddm;

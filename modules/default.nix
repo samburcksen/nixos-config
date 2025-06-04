@@ -1,6 +1,8 @@
 lib:
 
-let walk-dir = path:
+let
+  walk-dir =
+    path:
     let
       dir = builtins.readDir path;
     in
@@ -15,4 +17,4 @@ let walk-dir = path:
           builtins.throw "Items of type ${value} are unsupported.";
     }) dir;
 in
-  walk-dir ./.
+walk-dir ./.
