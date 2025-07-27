@@ -12,6 +12,7 @@
     user
     shell
     hyprland
+    kde
     wifi
     kanata
   ];
@@ -21,4 +22,10 @@
     # Lid behavior is handled by Hyprland
     HandleLidSwitch=ignore
   '';
+
+  # PowerManagement
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "ondemand";
+  };
 }

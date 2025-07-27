@@ -10,4 +10,9 @@
       "uinput"
     ];
   };
+
+  users.users.guest = {
+    isNormalUser = true;
+    description = "Guest";
+  };
 }

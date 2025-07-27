@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -32,6 +32,6 @@
     enable = true;
     wayland.enable = true;
     theme = "catppuccin-mocha";
-    package = pkgs.kdePackages.sddm;
+    package = lib.mkDefault pkgs.kdePackages.sddm;
   };
 }
