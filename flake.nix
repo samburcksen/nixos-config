@@ -33,12 +33,15 @@
         };
 
         nas = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          inherit specialArgs;
           modules = [
             ./hosts/nas
             ./modules/base.nix
           ];
         };
       };
+
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-tree;
     };
 }
