@@ -1,7 +1,7 @@
 { pkgs, modules, ... }:
 
 {
-  networking.hostName = "Nas-Nix-SB";
+  networking.hostName = "nas";
 
   imports = with modules; [
     ./hardware.nix
@@ -9,6 +9,8 @@
     locale
     user
     shell
+    docker
+    monitoring-utils
   ];
 
   # PowerManagement
@@ -20,11 +22,6 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
-    xfsprogs
-    htop
-    smartmontools
-    hdparm
-    iperf3
   ];
 
   # Enable the OpenSSH daemon.
@@ -32,6 +29,4 @@
   services.openssh.settings = {
     PermitRootLogin = "yes";
   };
-
-  virtualisation.docker.enable = true;
 }

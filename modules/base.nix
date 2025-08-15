@@ -32,7 +32,6 @@
     stow
     wget
     unzip
-
   ];
 
   system.stateVersion = "24.11";
