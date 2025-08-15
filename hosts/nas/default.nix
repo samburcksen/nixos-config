@@ -1,7 +1,7 @@
 { modules, ... }:
 
 {
-  networking.hostName = "Laptop-Nix-SB";
+  networking.hostName = "Nas-Nix-SB";
 
   imports = with modules; [
     ./hardware.nix

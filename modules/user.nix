@@ -6,13 +6,9 @@
     description = "Sam Burcksen";
     extraGroups = [
       "wheel"
-      "input"
+      "input" # input and uinput required by kanata
       "uinput"
     ];
   };
 
-  users.users.guest = {
-    isNormalUser = true;
-    description = "Guest";
-  };
 }
