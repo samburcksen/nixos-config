@@ -5,6 +5,7 @@
 
   imports = with modules; [
     ./hardware.nix
+    ./guest-setup.nix
     bluetooth
     boot
     audio
@@ -12,7 +13,6 @@
     user
     shell
     hyprland
-    guest-setup
     wifi
     kanata
   ];

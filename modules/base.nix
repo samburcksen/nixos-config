@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  allowUnfreePredicate,
+  ...
+}:
 
 {
   # Enable Nix Flakes
@@ -13,25 +17,16 @@
     variant = "";
   };
 
-  # Allow unfree packages and add unstable branch
+  # Explicitly require unfree packages to be specified
   nixpkgs.config = {
-    allowUnfree = true;
-    packageOverrides = pkgs: {
-      unstable =
-        import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz")
-          { };
-    };
+    allowUnfree = false;
+    inherit allowUnfreePredicate;
   };
 
   environment.systemPackages = with pkgs; [
     gcc
     cargo
     rustup
-
-    fzf
-    stow
-    wget
-    unzip
   ];
 
   system.stateVersion = "24.11";

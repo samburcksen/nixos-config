@@ -5,12 +5,12 @@
 
   imports = with modules; [
     ./hardware.nix
+    ./nvidia.nix
     bluetooth
     boot
     locale
     user
     audio
-    nvidia
     shell
     hyprland
     wifi
