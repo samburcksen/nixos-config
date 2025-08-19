@@ -8,6 +8,5 @@
     ./nvidia.nix
     common.default
     desktop.default
-    user
   ];
 }

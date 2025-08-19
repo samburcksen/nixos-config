@@ -7,14 +7,8 @@
     ./hardware.nix
     ./guest-setup.nix
     ./kanata.nix
-    bluetooth
-    boot
-    audio
-    locale
-    user
-    shell
-    hyprland
-    wifi
+    desktop.default
+    common.default
   ];
 
   # Overwrite default logind behaviour

@@ -61,7 +61,6 @@
           inherit specialArgs;
           modules = [
             ./hosts/desktop
-            ./modules/base.nix
             homeManager
           ];
         };
@@ -71,7 +70,6 @@
           inherit specialArgs;
           modules = [
             ./hosts/laptop
-            ./modules/base.nix
             homeManager
           ];
         };
@@ -81,7 +79,6 @@
           inherit specialArgs;
           modules = [
             ./hosts/nas
-            ./modules/base.nix
           ];
         };
       };

@@ -5,11 +5,8 @@
 
   imports = with modules; [
     ./hardware.nix
-    common
-    desktop
-    user
-    docker
-    monitoring-utils
+    ./docker.nix
+    common.default
   ];
 
   # PowerManagement
