@@ -1,5 +1,5 @@
-# system-configuratio
-My System configuration using NixOs, Home-Manager and some regular dotfiles
+# system-configuration
+My system configuration using NixOs, Home-Manager and some regular dotfiles
 
 The following hosts are configured:
 - Desktop PC
