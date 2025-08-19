@@ -1,0 +1,8 @@
+# See 'man 5 mako' for configuration options
+
+sort=-time
+
+# Use custom defined timeout duration
+ignore-timeout=1
+default-timeout=3000
+

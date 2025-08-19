@@ -1,0 +1,81 @@
+(defvar
+  tap-timeout   140 
+  hold-timeout  140
+  tt            $tap-timeout
+  ht            $hold-timeout
+)
+
+(defsrc
+    grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
+    tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
+    caps    a       s       d       f       g       h       j       k       l       ;       '       ret
+    lsft    z       x       c       v       b       n       m       ,       .       /       rsft
+    lctl    lmet    lalt                    spc                     ralt    rmet    rctl
+)
+
+(deflayer colemak-dh
+    grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
+    tab     q       w       f       p       b       j       l       u       y       ;       [       ]       \
+    caps    @a_met  @r_alt  @s_ctl  @t_sft  g       m       @n_sft  @e_ctl  @i_alt  @o_met  '       ret
+    lsft    x       c       d       v       z       k       h       ,       .       /       rsft
+    lctl    lmet    @lalt                   @spc                    @ralt    rmet    rctl
+)
+
+(deflayer movement
+    _       _       _       _       _       _       _       _       _       _       _       _       _       _
+    _       _       _       _       _       _       _       _       _       _       _       _       _       _
+    _       _       _       _       _       _       _       left    up      down    right   _       _
+    _       _       _       _       _       _       _       _       _       _       _       _
+    _       _       _                       _                       _       _       _
+)
+
+
+(deflayer number
+    _       _       _       _       _       _       _       _       _       _       _       _       _       _
+    _       _       _       _       _       _       S-5     7       8       9       S-3     _       _       _
+    _       _       _       _       _       _       +       4       5       6       -       _       _
+    _       _       _       _       _       _       S-8     1       2       3       S-2     _
+    _       _       _                       0                       _       _       _
+)
+
+(deflayer symbol
+    _       _       _       _       _       _       _       _       _       _       _       _       _       _
+    _       S-[     '       S-'     S-]     S-`     _       _       _       _       _       _       _       _
+    _       S-6     =       S--     S-4     `       _       _       _       _       _       _       _
+    _       [       S-7     S-\     ]       \       _       _       _       _       _       _
+    _       _       S-9                     S-0                     _       _       _
+)
+
+(deflayer qwerty
+    grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
+    tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
+    caps    @a_met  @s_alt  @d_ctl  @f_sft  g       h       @j_sft  @k_ctl  @l_alt  @;_met  '       ret
+    lsft    z       x       c       v       b       n       m       ,       .       /       rsft
+    lctl    lmet    @lalt                   @spc                    @ralt   rmet    rctl
+)
+
+(defalias
+  t_sft (tap-hold $tt $ht t lsft)
+  n_sft (tap-hold $tt $ht n rsft)
+  f_sft (tap-hold $tt $ht f lsft)
+  j_sft (tap-hold $tt $ht j rsft)
+
+  s_ctl (tap-hold $tt $ht s lctl)
+  e_ctl (tap-hold $tt $ht e rctl)
+  d_ctl (tap-hold $tt $ht d lctl)
+  k_ctl (tap-hold $tt $ht k rctl)
+
+  r_alt (tap-hold $tt $ht r lalt)
+  i_alt (tap-hold $tt $ht i ralt)
+  s_alt (tap-hold $tt $ht s lalt)
+  l_alt (tap-hold $tt $ht l ralt)
+
+  a_met (tap-hold $tt $ht a lmet)
+  o_met (tap-hold $tt $ht o rmet)
+  ;_met (tap-hold $tt $ht ; rmet)
+
+  lalt (tap-hold $tt $ht bspc (layer-toggle movement))
+  ralt (tap-hold $tt $ht del (layer-toggle symbol))
+  spc  (tap-hold $tt $ht spc (layer-toggle number))
+)
+

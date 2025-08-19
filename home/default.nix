@@ -9,6 +9,7 @@
     ./terminal.nix
     ./theme.nix
     ./desktop-packages.nix
+    ./dotfiles.nix
   ];
 
   home.username = "sburcksen";

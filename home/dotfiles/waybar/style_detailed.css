@@ -1,0 +1,95 @@
+window#waybar {
+    font-family: "JetBrains Mono NerdFont";
+    background-color: rgba(0,0,0,0);
+    font-size: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.modules-left, .modules-center {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 0.5rem;
+    padding: 2px;
+}
+
+.modules-right {
+    opacity: 1;
+    background-color: rgba(0,0,0,0.7);
+    border-radius: 0.5rem;
+    padding: 2px 8px 2px 10px
+}
+
+#workspaces {
+    border-radius: 0.5rem;
+    padding: 0 2px;
+}
+
+#workspaces button {
+    font-size: 0.6rem;
+    padding: 0 0.3rem 0 0;
+    color: darkgrey
+}
+
+#clock {
+    font-weight: bolder;
+    font-size: 1rem;
+    border-radius: 0.5rem;
+    padding: 0 8px 0 8px;
+    color: darkgrey
+}
+
+#network {
+    font-size: 1.1rem;
+    margin-right: -4px;
+    color: darkgrey;
+}
+
+@keyframes blink-update {
+	to {
+		color: red;
+	}
+}
+
+#custom-pacman {
+    color: forestgreen;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+#custom-pacman.pending-updates {
+	animation-name: blink-update;
+	animation-duration: 2s;
+}
+
+#battery {
+    color: lightgreen;
+}
+
+#disk {
+    color: cyan;
+}
+
+#memory {
+    color: lightpink;
+}
+
+#cpu {
+    color: lightgoldenrodyellow;
+}
+
+#temperature {
+    color: coral;
+}
+
+#backlight {
+    color: lightblue;
+}
+
+#wireplumber {
+    color: darkgrey;
+}
+
+#custom-power {
+    color: darkgrey;
+}
+
