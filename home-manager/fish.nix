@@ -1,9 +1,9 @@
 { pkgs, lib, ... }:
 
 {
-#  programs.fish = {
-#    enable = true;
-#    plugins = [
-#    ];
-#  };
+  #  programs.fish = {
+  #    enable = true;
+  #    plugins = [
+  #    ];
+  #  };
 }

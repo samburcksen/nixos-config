@@ -8,7 +8,6 @@
     killall
     fd
     fzf
-    stow
   ];
 
   programs.fish.enable = true;

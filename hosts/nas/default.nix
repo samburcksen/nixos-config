@@ -5,10 +5,9 @@
 
   imports = with modules; [
     ./hardware.nix
-    boot
-    locale
+    common
+    desktop
     user
-    shell
     docker
     monitoring-utils
   ];

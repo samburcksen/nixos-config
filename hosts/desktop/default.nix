@@ -6,13 +6,8 @@
   imports = with modules; [
     ./hardware.nix
     ./nvidia.nix
-    bluetooth
-    boot
-    locale
+    common.default
+    desktop.default
     user
-    audio
-    shell
-    hyprland
-    wifi
   ];
 }

@@ -11,4 +11,6 @@
       AutoConnect = true;
     };
   };
+
+  networking.networkmanager.enable = false;
 }

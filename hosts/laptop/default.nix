@@ -6,6 +6,7 @@
   imports = with modules; [
     ./hardware.nix
     ./guest-setup.nix
+    ./kanata.nix
     bluetooth
     boot
     audio
@@ -14,7 +15,6 @@
     shell
     hyprland
     wifi
-    kanata
   ];
 
   # Overwrite default logind behaviour
