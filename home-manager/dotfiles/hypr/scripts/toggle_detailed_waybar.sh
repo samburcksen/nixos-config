@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
 
-pkill waybar
-
 conf_dir=~/.config/waybar
-current_conf=$(readlink ${conf_dir}/config.jsonc)
+state_file=/tmp/waybar_state_$UID
 
-if [[ $current_conf = ${conf_dir}/config_detailed.jsonc ]]; 
+if [ ! -e $state_file ];
 then
-    ln -sf ${conf_dir}/config_default.jsonc ${conf_dir}/config.jsonc
-    ln -sf ${conf_dir}/style_default.css ${conf_dir}/style.css
-else
-    ln -sf ${conf_dir}/config_detailed.jsonc ${conf_dir}/config.jsonc
-    ln -sf ${conf_dir}/style_detailed.css ${conf_dir}/style.css
+    echo "default" > $state_file
 fi
 
-waybar
+if [ $(cat $state_file) = "default" ];
+then
+    echo "detailed" > $state_file
+    pkill waybar
+    waybar -c ${conf_dir}/config_detailed.jsonc -s ${conf_dir}/style_detailed.css  
+else
+    echo "default" > $state_file
+    pkill waybar
+    waybar 
+fi

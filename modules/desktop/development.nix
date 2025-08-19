@@ -10,5 +10,7 @@
     cargo
     rustup
     python3
+
+    obsidian
   ];
 }

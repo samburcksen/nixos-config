@@ -21,6 +21,7 @@
       unfreePackages = [
         "nvidia-x11"
         "spotify"
+        "obsidian"
       ];
 
       specialArgs = {
