@@ -47,7 +47,7 @@
       };
     in
     {
-      homeManagerModules.default = import ./home;
+      homeManagerModules.default = import ./home-manager;
 
       # For standalone usage
       homeConfigurations.sburcksen = home-manager.lib.homeManagerConfiguration {
