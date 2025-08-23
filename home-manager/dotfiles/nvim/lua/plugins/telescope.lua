@@ -20,12 +20,11 @@ return {
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {
             desc = 'Telescope'
         })
-        vim.keymap.set('n', '<C-p>', builtin.find_files, {})
         vim.keymap.set('n', '<leader>ps',
             function()
                 builtin.grep_string({ search = vim.fn.input("Grep > ") });
             end,
-            { desc = 'Seach file contents' }
+            { desc = 'Search file contents (telescope)' }
         )
     end
 }
