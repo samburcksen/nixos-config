@@ -18,7 +18,6 @@ local clangd_config = {
         "clangd",
         "--fallback-style=webkit"
     }
-
 }
 
 return {
