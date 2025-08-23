@@ -5,7 +5,6 @@
     "nvim".source = ./dotfiles/nvim;
     "fish".source = ./dotfiles/fish;
     "waybar".source = ./dotfiles/waybar;
-    "wlogout".source = ./dotfiles/wlogout;
     "kanata".source = ./dotfiles/kanata;
   }
   //

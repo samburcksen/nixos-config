@@ -11,6 +11,7 @@
     ./nvim.nix
     ./terminal.nix
     ./theme.nix
+    ./wlogout.nix
   ];
 
   home.username = "sburcksen";
