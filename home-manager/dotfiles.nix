@@ -3,7 +3,6 @@
 {
   xdg.configFile = {
     "nvim".source = ./dotfiles/nvim;
-    "fish".source = ./dotfiles/fish;
     "waybar".source = ./dotfiles/waybar;
     "kanata".source = ./dotfiles/kanata;
   }
