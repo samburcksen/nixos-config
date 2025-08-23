@@ -7,9 +7,8 @@
     gnumake
     cmake
     gdb
-    cargo
-    rustup
     python3
+    rustup
 
     obsidian
   ];
