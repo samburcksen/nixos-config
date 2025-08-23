@@ -19,7 +19,7 @@
     jq # JSON parser required for custom workspace switch behavior
     (catppuccin-sddm.override {
       flavor = "mocha";
-      font = "JetBrainsMono";
+      font = "JetBrainsMonoNerdFont-Regular";
       fontSize = "16";
     })
   ];

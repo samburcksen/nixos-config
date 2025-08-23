@@ -5,5 +5,6 @@
     firefox
     spotify
     vesktop
+    obsidian
   ];
 }

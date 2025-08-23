@@ -9,7 +9,5 @@
     gdb
     python3
     rustup
-
-    obsidian
   ];
 }

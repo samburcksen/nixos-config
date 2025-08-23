@@ -2,14 +2,15 @@
 
 {
   imports = [
-    ./nvim.nix
-    ./fonts.nix
-    ./fish.nix
-    ./git.nix
-    ./terminal.nix
-    ./theme.nix
     ./desktop-packages.nix
     ./dotfiles.nix
+    ./fish.nix
+    ./fonts.nix
+    ./git.nix
+    ./mako.nix
+    ./nvim.nix
+    ./terminal.nix
+    ./theme.nix
   ];
 
   home.username = "sburcksen";
