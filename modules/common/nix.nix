@@ -7,6 +7,9 @@
     "flakes"
   ];
 
+  nix.channel.enable = false;
+  nix.settings.use-xdg-base-directories = true;
+
   # Explicitly require unfree packages to be specified
   nixpkgs.config = {
     allowUnfree = false;
