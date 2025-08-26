@@ -34,4 +34,5 @@
     theme = "catppuccin-mocha";
     package = lib.mkDefault pkgs.kdePackages.sddm;
   };
+  services.displayManager.defaultSession = "hyprland";
 }
