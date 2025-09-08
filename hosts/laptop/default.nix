@@ -12,10 +12,10 @@
   ];
 
   # Overwrite default logind behaviour
-  services.logind.extraConfig = ''
+  services.logind.settings.Login = {
     # Lid behavior is handled by Hyprland
-    HandleLidSwitch=ignore
-  '';
+    HandleLidSwitch = "ignore";
+  };
 
   # PowerManagement
   powerManagement = {

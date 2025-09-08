@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./browser.nix
     ./desktop-packages.nix
     ./dotfiles.nix
     ./fish.nix
