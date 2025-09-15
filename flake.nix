@@ -54,12 +54,13 @@
       };
     in
     {
-      homeManagerModules.default = import ./home-manager;
-
       # For standalone usage
       homeConfigurations.sburcksen = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        modules = [ self.homeManagerModules.default ];
+        modules = [
+          ./home-manager
+        ];
+        extraSpecialArgs = { inherit inputs; };
       };
 
       nixosConfigurations = {
