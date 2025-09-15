@@ -54,11 +54,13 @@
       };
     in
     {
+      homeManagerModules.default = import ./home-manager;
+
       # For standalone usage
       homeConfigurations.sburcksen = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
         modules = [
-          ./home-manager
+          self.homeManagerModules.default
         ];
         extraSpecialArgs = { inherit inputs; };
       };
