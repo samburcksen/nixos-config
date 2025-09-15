@@ -6,6 +6,7 @@
 )
 
 (defsrc
+    esc
     grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
     tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
     caps    a       s       d       f       g       h       j       k       l       ;       '       ret
@@ -14,14 +15,16 @@
 )
 
 (deflayer colemak-dh
+    esc
     grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
     tab     q       w       f       p       b       j       l       u       y       ;       [       ]       \
-    caps    @a_met  @r_alt  @s_ctl  @t_sft  g       m       @n_sft  @e_ctl  @i_alt  @o_met  '       ret
+    esc    @a_met  @r_alt  @s_ctl  @t_sft  g       m       @n_sft  @e_ctl  @i_alt  @o_met  '       ret
     lsft    x       c       d       v       z       k       h       ,       .       /       rsft
     lctl    lmet    @lalt                   @spc                    @ralt    rmet    rctl
 )
 
 (deflayer movement
+    _
     _       _       _       _       _       _       _       _       _       _       _       _       _       _
     _       _       _       _       _       _       _       _       _       _       _       _       _       _
     _       _       _       _       _       _       _       left    up      down    right   _       _
@@ -31,14 +34,16 @@
 
 
 (deflayer number
+    _
     _       _       _       _       _       _       _       _       _       _       _       _       _       _
     _       _       _       _       _       _       S-5     7       8       9       S-3     _       _       _
     _       _       _       _       _       _       +       4       5       6       -       _       _
     _       _       _       _       _       _       S-8     1       2       3       S-2     _
-    _       _       _                       0                       _       _       _
+    _       _       _                       _                       _       _       _
 )
 
 (deflayer symbol
+    _
     _       _       _       _       _       _       _       _       _       _       _       _       _       _
     _       S-[     '       S-'     S-]     S-`     _       _       _       _       _       _       _       _
     _       S-6     =       S--     S-4     `       _       _       _       _       _       _       _
@@ -47,9 +52,10 @@
 )
 
 (deflayer qwerty
+    _
     grv     1       2       3       4       5       6       7       8       9       0       -       =       bspc
     tab     q       w       e       r       t       y       u       i       o       p       [       ]       \
-    caps    @a_met  @s_alt  @d_ctl  @f_sft  g       h       @j_sft  @k_ctl  @l_alt  @;_met  '       ret
+    esc     @a_met  @s_alt  @d_ctl  @f_sft  g       h       @j_sft  @k_ctl  @l_alt  @;_met  '       ret
     lsft    z       x       c       v       b       n       m       ,       .       /       rsft
     lctl    lmet    @lalt                   @spc                    @ralt   rmet    rctl
 )
@@ -75,7 +81,7 @@
   ;_met (tap-hold $tt $ht ; rmet)
 
   lalt (tap-hold $tt $ht bspc (layer-toggle movement))
-  ralt (tap-hold $tt $ht del (layer-toggle symbol))
+  ralt (tap-hold $tt $ht ret (layer-toggle symbol))
   spc  (tap-hold $tt $ht spc (layer-toggle number))
 )
 
